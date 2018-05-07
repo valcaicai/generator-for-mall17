@@ -1,0 +1,36 @@
+package cn.pigeon.mall17.dto;
+
+import cn.pigeon.mall17.dto.base.Dto;
+import cn.pigeon.mall17.model.{{t.model_name}};
+
+/**
+ * <p/>
+ * {{t.comment}}  数据传输对象
+ * @author <a href="caipeijun666@gmail.com">Pigeon</a>
+ * write by code-generator form Pigeon
+ * @since 0.1.0
+ */
+
+public class {{t.model_name}}Dto extends {{t.model_name}} implements Dto<{{t.model_name}}>  {
+
+    public {{t.model_name}}Dto ({{t.model_name}} {{t.table_name}}) {
+        if ( {{t.table_name}} == null){
+            return;
+        }
+        {% for col in t.cols %}
+        set{{col.up_name}}({{t.table_name}}.get{{col.up_name}}());
+        {% endfor %}
+    }
+
+
+    @Override
+    public {{t.model_name}} toEntity() {
+
+        {{t.model_name}} {{t.table_name}} = new {{t.model_name}}();
+        {% for col in t.cols %}
+        {{t.table_name}}.set{{col.up_name}}(this.get{{col.up_name}}());
+        {% endfor %}
+        return {{t.table_name}};
+    }
+
+}

@@ -1,0 +1,20 @@
+package cn.pigeon.mall17.service.impl;
+
+import cn.pigeon.mall17.dao.{{t.model_name}}Mapper;
+import cn.pigeon.mall17.model.{{t.model_name}};
+import cn.pigeon.mall17.service.I{{t.model_name}}Service;
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
+
+/**
+ * <p/>
+ * {{t.comment}}
+ * @author <a href="caipeijun666@gmail.com">Pigeon</a>
+ * write by code-generator form Pigeon
+ * @since 0.1.0
+ */
+
+@Service
+public class {{t.model_name}}Service extends ServiceImpl<{{t.model_name}}Mapper,{{t.model_name}}> implements I{{t.model_name}}Service {
+
+}

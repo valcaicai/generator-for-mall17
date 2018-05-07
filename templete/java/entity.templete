@@ -1,0 +1,42 @@
+package cn.pigeon.mall17.model;
+
+import org.apache.ibatis.type.Alias;
+import cn.pigeon.mall17.model.base.BaseEntity;
+
+/**
+ * <p/>
+ * {{t.comment}}
+ * @author <a href="caipeijun666@gmail.com">Pigeon</a>
+ * write by code-generator form Pigeon
+ * @since 0.1.0
+ */
+
+@Alias("{{t.table_name}}")
+public class {{t.model_name}} extends BaseEntity {
+
+    {% for col in t.cols %}
+    /**
+    * {{col.comment}}
+    */
+    {{col.statement}}
+    {% endfor %}
+    /************* getter and setter *****************/
+    {% for col in t.cols %}
+    {{col.getter}}
+    {{col.setter}}
+    {% endfor %}
+    /************ override ************/
+    @Override
+    public String toString() {
+        return "{{model_name}}{" +
+                " id="+getId() +
+                " version="+getVersion()+
+                " createdDate="+getCreatedDate() +
+                " deleted="+getDeleted() +
+                {% for col in t.cols %}
+                " {{col.col_name}}='" + {{col.col_name}} +
+                {% endfor %}
+                '}';
+    }
+
+}

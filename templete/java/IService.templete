@@ -1,0 +1,16 @@
+package cn.pigeon.mall17.service;
+
+import cn.pigeon.mall17.model.{{t.model_name}};
+import com.baomidou.mybatisplus.service.IService;
+
+/**
+ * <p/>
+ * {{t.comment}}
+ * @author <a href="caipeijun666@gmail.com">Pigeon</a>
+ * write by code-generator form Pigeon
+ * @since 0.1.0
+ */
+
+public interface I{{t.model_name}}Service extends IService<{{t.model_name}}>{
+
+}

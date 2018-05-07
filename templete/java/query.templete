@@ -1,0 +1,33 @@
+package cn.pigeon.mall17.query;
+
+import cn.pigeon.mall17.model.{{t.model_name}};
+import cn.pigeon.mall17.query.base.AbstractQuery;
+import com.baomidou.mybatisplus.mapper.Condition;
+import com.google.common.base.Strings;
+
+/**
+ * <p/>
+ * {{t.comment}}
+ * @author <a href="caipeijun666@gmail.com">Pigeon</a>
+ * write by code-generator form Pigeon
+ * @since 0.1.0
+ */
+
+public class {{t.model_name}}Query extends AbstractQuery<{{t.model_name}}> {
+
+    public {{t.model_name}}Query({{t.model_name}} entity) {
+        super(entity);
+    }
+
+    @Override
+    public Condition getCondition() {
+
+        Condition condition = Condition.create();
+        {% for col in t.cols %}
+        {{col.condition}}
+        {% endfor %}
+        return condition;
+    }
+
+
+}
